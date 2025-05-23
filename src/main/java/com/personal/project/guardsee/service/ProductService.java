@@ -10,6 +10,6 @@ public interface ProductService {
     List<ProductListDTO> countProductByName();
     List<Product> getAllProduct();
     Long saveProduct(Product product);
-//    Long deleteProductByID(Long id);
+    Long deleteProductBySerialNumber(String serialNumber);
 //    Long updateProduct(Product product);
 }
