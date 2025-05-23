@@ -2,8 +2,11 @@ package com.personal.project.guardsee.service.impl;
 
 import com.personal.project.guardsee.model.Product;
 import com.personal.project.guardsee.model.ProductListDTO;
+import com.personal.project.guardsee.model.ProductStateDTO;
+import com.personal.project.guardsee.model.State;
 import com.personal.project.guardsee.repository.ProductRepository;
 import com.personal.project.guardsee.service.ProductService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
