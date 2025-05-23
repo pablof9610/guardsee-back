@@ -9,7 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
-
-    @Query("SELECT new com.personal.project.guardsee.model.ProductListDTO(p.name, COUNT(p)) FROM Product p GROUP BY p.name")
+//select name, state, count(state) from tb_product group by name;
+    @Query("SELECT new com.personal.project.guardsee.model.ProductListDTO(p.name, p.state, COUNT(p.state)) FROM Product p GROUP BY p.name, p.state ORDER BY p.name")
     List<ProductListDTO> countProductByName();
+
+    int deleteBySerialNumber(String serialNumber);
 }
