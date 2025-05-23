@@ -29,7 +29,7 @@ public class ProductController {
 
     @GetMapping("/distinct")
     @CrossOrigin(origins = "http://localhost:4200")
-    public List<ProductListDTO> getAllProductDistinct() {
+    public List<ProductStateDTO> getAllProductDistinct() {
         return productService.countProductByName();
     }
 }
