@@ -25,7 +25,21 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductListDTO> countProductByName() {
-        return repository.countProductByName();
+    public List<ProductStateDTO> countProductByName() {
+        var listReturned = repository.countProductByName();
+        List<ProductStateDTO> productsDistincted = new java.util.ArrayList<>();
+
+        while(!listReturned.isEmpty()) {
+            var productToAdd = new ProductStateDTO(listReturned.getFirst().getName());
+
+            while(!listReturned.isEmpty() &&
+                    listReturned.getFirst().getName().equalsIgnoreCase(productToAdd.getName())) {
+                var firstObject = listReturned.getFirst();
+                productToAdd.addState(new State(firstObject.getState(), firstObject.getQuantity()));
+                listReturned.removeFirst();
+            }
+            productsDistincted.add(productToAdd);
+        }
+        return productsDistincted;
     }
 }
