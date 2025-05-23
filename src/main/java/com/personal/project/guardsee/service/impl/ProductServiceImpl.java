@@ -45,4 +45,10 @@ public class ProductServiceImpl implements ProductService {
         }
         return productsDistincted;
     }
+    
+    @Override
+    @Transactional
+    public Long deleteProductBySerialNumber(String serialNumber) {
+        return (long) repository.deleteBySerialNumber(serialNumber);
+    }
 }
