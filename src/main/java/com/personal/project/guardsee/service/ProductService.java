@@ -1,7 +1,7 @@
 package com.personal.project.guardsee.service;
 
 import com.personal.project.guardsee.model.Product;
-import com.personal.project.guardsee.model.ProductListDTO;
+import com.personal.project.guardsee.model.ProductStateDTO;
 
 import java.util.List;
 
