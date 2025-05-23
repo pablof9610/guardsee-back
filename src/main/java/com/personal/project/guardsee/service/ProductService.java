@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ProductService {
 //    Product getProductByID(Long id);
-    List<ProductListDTO> countProductByName();
+    List<ProductStateDTO> countProductByName();
     List<Product> getAllProduct();
     Long saveProduct(Product product);
     Long deleteProductBySerialNumber(String serialNumber);
