@@ -19,6 +19,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Long saveProduct(Product product) {
+        if (repository.findProductBySerialNumber(product.getSerialNumber()).isPresent())
+            throw new DuplicatedProductPropException();
         return repository.save(product).getId();
     }
 
