@@ -24,7 +24,7 @@ public class ProductController {
     @GetMapping
     @CrossOrigin(origins = "http://localhost:4200")
     public List<Product> getAllProduct() {
-        return productService.getAllProduct();
+        return productService.findAllProduct();
     }
 
     @GetMapping("/distinct")
