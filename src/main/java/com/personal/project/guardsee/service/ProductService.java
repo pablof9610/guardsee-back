@@ -6,9 +6,8 @@ import com.personal.project.guardsee.model.ProductStateDTO;
 import java.util.List;
 
 public interface ProductService {
-//    Product getProductByID(Long id);
     List<ProductStateDTO> countProductByName();
-    List<Product> getAllProduct();
+    List<Product> findAllProduct();
     Long saveProduct(Product product);
     Long deleteProductBySerialNumber(String serialNumber);
 //    Long updateProduct(Product product);

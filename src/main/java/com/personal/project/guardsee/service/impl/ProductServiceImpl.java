@@ -1,7 +1,7 @@
 package com.personal.project.guardsee.service.impl;
 
+import com.personal.project.guardsee.exception.DuplicatedProductPropException;
 import com.personal.project.guardsee.model.Product;
-import com.personal.project.guardsee.model.ProductListDTO;
 import com.personal.project.guardsee.model.ProductStateDTO;
 import com.personal.project.guardsee.model.State;
 import com.personal.project.guardsee.repository.ProductRepository;
@@ -25,7 +25,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getAllProduct() {
+    public List<Product> findAllProduct() {
         return repository.findAll();
     }
 
@@ -47,7 +47,7 @@ public class ProductServiceImpl implements ProductService {
         }
         return productsDistincted;
     }
-    
+
     @Override
     @Transactional
     public Long deleteProductBySerialNumber(String serialNumber) {
