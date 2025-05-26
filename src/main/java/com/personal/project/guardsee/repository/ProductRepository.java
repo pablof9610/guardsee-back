@@ -14,4 +14,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<ProductListDTO> countProductByName();
 
     int deleteBySerialNumber(String serialNumber);
+
+    Optional<Product> findProductBySerialNumber(String serialNumber);
 }
