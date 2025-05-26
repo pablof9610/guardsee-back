@@ -32,4 +32,10 @@ public class ProductController {
     public List<ProductStateDTO> getAllProductDistinct() {
         return productService.countProductByName();
     }
+
+    @DeleteMapping(value = "/{serialnumber}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public Long deleteProductBySerialNumber(@PathVariable(value = "serialnumber") String serialNumber) {
+        return productService.deleteProductBySerialNumber(serialNumber);
+    }
 }
