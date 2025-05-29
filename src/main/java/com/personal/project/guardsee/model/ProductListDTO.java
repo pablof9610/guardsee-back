@@ -10,7 +10,7 @@ public class ProductListDTO {
     private Long quantity;
     private String detail;
 
-    public ProductListDTO(String name, Long quantity) {
+    public ProductListDTO(String name, String state, Long quantity) {
         this.name = name;
         this.quantity = quantity;
     }
