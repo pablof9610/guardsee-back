@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
-//select name, state, count(state) from tb_product group by name;
     @Query("SELECT new com.personal.project.guardsee.model.ProductListDTO(p.name, p.state, COUNT(p.state)) FROM Product p GROUP BY p.name, p.state ORDER BY p.name")
     List<ProductListDTO> countProductByName();
 
