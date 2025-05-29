@@ -53,4 +53,20 @@ public class ProductServiceImpl implements ProductService {
     public Long deleteProductBySerialNumber(String serialNumber) {
         return (long) repository.deleteBySerialNumber(serialNumber);
     }
+
+    @Override
+    public Product updateProductBySerialNumber(Product productToUpdate) {
+        var productOptional = repository.findProductBySerialNumber(productToUpdate.getSerialNumber());
+        if (productOptional.isEmpty()) throw new NoSuchElementException();
+        var productFounded = productOptional.get();
+        productFounded.setName(productToUpdate.getName());
+        productFounded.setState(productToUpdate.getState());
+        productFounded.setModel(productToUpdate.getModel());
+        productFounded.setTicket(productToUpdate.getTicket());
+        productFounded.setVendor(productToUpdate.getVendor());
+        productFounded.setSerialNumber(productToUpdate.getSerialNumber());
+        productFounded.setDetail(productToUpdate.getDetail());
+        repository.save(productFounded);
+        return productFounded;
+    }
 }
