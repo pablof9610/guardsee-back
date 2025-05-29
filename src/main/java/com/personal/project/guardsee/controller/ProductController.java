@@ -1,7 +1,7 @@
 package com.personal.project.guardsee.controller;
 
 import com.personal.project.guardsee.model.Product;
-import com.personal.project.guardsee.model.ProductListDTO;
+import com.personal.project.guardsee.model.ProductStateDTO;
 import com.personal.project.guardsee.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
