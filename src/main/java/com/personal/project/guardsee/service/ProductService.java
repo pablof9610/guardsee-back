@@ -10,5 +10,5 @@ public interface ProductService {
     List<Product> findAllProduct();
     Long saveProduct(Product product);
     Long deleteProductBySerialNumber(String serialNumber);
-//    Long updateProduct(Product product);
+    Product updateProductBySerialNumber(Product product);
 }
