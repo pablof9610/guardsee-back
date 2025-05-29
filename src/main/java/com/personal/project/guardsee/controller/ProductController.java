@@ -38,4 +38,11 @@ public class ProductController {
     public Long deleteProductBySerialNumber(@PathVariable(value = "serialnumber") String serialNumber) {
         return productService.deleteProductBySerialNumber(serialNumber);
     }
+
+    @PutMapping
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<Product> updateProductBySerialNumber(@RequestBody Product productToUpdate) {
+        var productUpdated = productService.updateProductBySerialNumber(productToUpdate);
+        return ResponseEntity.status(HttpStatus.OK).body(productUpdated);
+    }
 }
