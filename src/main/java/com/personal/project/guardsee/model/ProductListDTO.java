@@ -9,6 +9,7 @@ public class ProductListDTO {
     private String name;
     private Long quantity;
     private String detail;
+    private String state;
 
     public ProductListDTO(String name, String state, Long quantity) {
         this.name = name;
