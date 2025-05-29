@@ -12,6 +12,7 @@ public class ProductListDTO {
 
     public ProductListDTO(String name, String state, Long quantity) {
         this.name = name;
+        this.state = state;
         this.quantity = quantity;
     }
 }
