@@ -1,9 +1,11 @@
 package com.personal.project.guardsee.controller;
 
 import com.personal.project.guardsee.model.Product;
-import com.personal.project.guardsee.model.ProductListDTO;
+import com.personal.project.guardsee.model.ProductStateDTO;
 import com.personal.project.guardsee.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,5 +39,12 @@ public class ProductController {
     @CrossOrigin(origins = "http://localhost:4200")
     public Long deleteProductBySerialNumber(@PathVariable(value = "serialnumber") String serialNumber) {
         return productService.deleteProductBySerialNumber(serialNumber);
+    }
+
+    @PutMapping
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<Product> updateProductBySerialNumber(@RequestBody Product productToUpdate) {
+        var productUpdated = productService.updateProductBySerialNumber(productToUpdate);
+        return ResponseEntity.status(HttpStatus.OK).body(productUpdated);
     }
 }
